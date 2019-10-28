@@ -1,6 +1,6 @@
 # A cronjob to send the digest email.  It relies on the NFS volume to
-# maintain incremental progress. The GitHub API token must be created in
-# advance:
+# maintain incremental progress. The GitHub API token and ssmtp.conf
+# must be created in advance:
 #
 # kubectl create secret generic repo-digest-secret \
 #         --from-file=ssmtp.conf --from-file=github-issue-token
