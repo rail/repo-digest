@@ -155,13 +155,13 @@ td {
         <td>
           <article class="markdown-body entry-content">
             {{ .Body | markDown }}
-            <br />
-            Commits:
+            <details><summary>Commits</summary>
             <ul>
             {{ range .CommitMessages }}
             <li><pre>{{ .Commit.Message }}</pre></li>
             {{ end }}
             </ul>
+            </details>
           </article>
         </td>
       </tr>
@@ -190,13 +190,13 @@ td {
         <td colspan="2">
           <article class="markdown-body entry-content">
             {{ .Body | markDown }}
-            <br />
-            Commits:
+            <details><summary>Commits</summary>
             <ul>
             {{ range .CommitMessages }}
             <li><pre>{{ .Commit.Message }}</pre></li>
             {{ end }}
             </ul>
+            </details>
           </article>
         </td>
       </tr>
