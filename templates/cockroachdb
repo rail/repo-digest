@@ -142,7 +142,7 @@ td {
       <tr class="header">
         <td class="title">
           <a href="{{ .HtmlURL }}">{{ .Title }}</a>
-          <div class="stats">Opened by {{ .User.Login }} at {{ .CreatedAtStr }} with {{ .AdditionsStr }} additions, {{ .DeletionsStr }} deletions, {{ .CommentsStr }} comments</div>
+          <div class="stats">{{ .User.Login }} in {{ .Repo }} at {{ .CreatedAtStr }} <span style="color:#28a745">+{{ .AdditionsStr }}</span> <span style="color:#cb2431">-{{ .DeletionsStr }}</span>, {{ .CommentsStr }} comments</div>
           <div class="rank-stats"><span class="rank">{{ .Class }}</span>&nbsp;<span class="importance">SIZE</span>&nbsp;&nbsp;&nbsp;&nbsp;
             {{ range $index, $el := .Subdirectories}}
               <span class="subdirectory">{{if $index}},&nbsp;&nbsp;{{end}}{{$el.Name}}</span>: <span class="line-count">{{$el.TotalChangesStr}}</span>
@@ -171,13 +171,13 @@ td {
     <div class="title">No new pull requests were opened</div>
     {{end}}
 
-    <div class="section-title">Closed Pull Requests</div>
+    <div class="section-title">Merged Pull Requests</div>
 		{{range .Closed}}
     <table class="closed-request">
       <tr class="header">
         <td class="title">
           <a href="{{ .HtmlURL }}">{{ .Title }}</a>
-          <div class="stats">Closed by {{ .MergedBy.Login }} at {{ .ClosedAtStr }} with {{ .AdditionsStr }} additions, {{ .DeletionsStr }} deletions, {{ .CommentsStr }} comments</div>
+          <div class="stats">{{ .User.Login }} in {{ .Repo }} at {{ .ClosedAtStr }} <span style="color:#28a745">+{{ .AdditionsStr }}</span> <span style="color:#cb2431">-{{ .DeletionsStr }}</span>, {{ .CommentsStr }} comments</div>
           <div class="rank-stats"><span class="rank">{{ .Class }}</span>&nbsp;<span class="importance">SIZE</span>&nbsp;&nbsp;&nbsp;&nbsp;
             {{ range $index, $el := .Subdirectories}}
               <span class="subdirectory">{{if $index}},&nbsp;&nbsp;{{end}}{{$el.Name}}</span>: <span class="line-count">{{$el.TotalChangesStr}}</span>
@@ -189,8 +189,8 @@ td {
       <tr class="body">
         <td colspan="2">
           <article class="markdown-body entry-content">
+            <details><summary>Details</summary>
             {{ .Body | markDown }}
-            <details><summary>Commits</summary>
             <ul>
             {{ range .CommitMessages }}
             <li><pre>{{ .Commit.Message }}</pre></li>
