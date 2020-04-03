@@ -129,7 +129,7 @@ type Config struct {
 }
 
 var cfg = Config{
-	Template: "templates/default",
+	Template: "templates/cockroachdb",
 }
 
 func initConfig() error {

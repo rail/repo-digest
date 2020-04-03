@@ -137,6 +137,7 @@ func (slice Subdirectories) Swap(i, j int) {
 }
 
 type PullRequest struct {
+	Repo               string // not fetched from API
 	URL                string `json:"url"`
 	ID                 int    `json:"id"`
 	HtmlURL            string `json:"html_url"`
@@ -348,6 +349,12 @@ func QueryPullRequests(c *Config, repo string) ([]*PullRequest, []*PullRequest, 
 		}
 	}
 	fmt.Printf("\n")
+	for i := range open {
+		open[i].Repo = repo
+	}
+	for i := range closed {
+		closed[i].Repo = repo
+	}
 	return open, closed, nil
 }
 
