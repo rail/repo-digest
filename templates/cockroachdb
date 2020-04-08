@@ -155,13 +155,6 @@ td {
         <td>
           <article class="markdown-body entry-content">
             {{ .Body | markDown }}
-            <details><summary>Commits</summary>
-            <ul>
-            {{ range .CommitMessages }}
-            <li><pre>{{ .Commit.Message }}</pre></li>
-            {{ end }}
-            </ul>
-            </details>
           </article>
         </td>
       </tr>
@@ -185,20 +178,6 @@ td {
           </div>
         </td>
         <td class="title"><img src="{{ .User.AvatarURL }}" class="avatar"/></td>
-      </tr>
-      <tr class="body">
-        <td colspan="2">
-          <article class="markdown-body entry-content">
-            <details><summary>Details</summary>
-            {{ .Body | markDown }}
-            <ul>
-            {{ range .CommitMessages }}
-            <li><pre>{{ .Commit.Message }}</pre></li>
-            {{ end }}
-            </ul>
-            </details>
-          </article>
-        </td>
       </tr>
     </table>
     <div class="spacer">&nbsp</div>
