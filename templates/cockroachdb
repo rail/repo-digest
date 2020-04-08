@@ -57,6 +57,10 @@ td {
     height: 50px;
 }
 
+.alnright {
+    text-align: right;
+}
+
 .stats {
     font-family: ArialMT;
     font-size: 12px;
@@ -149,19 +153,12 @@ td {
             {{end}}
           </div>
         </td>
-        <td class="title"><img src="{{ .User.AvatarURL }}" class="avatar"/></td>
+        <td class="title alnright"><img src="{{ .User.AvatarURL }}" class="avatar"/></td>
       </tr>
       <tr class="body">
         <td>
           <article class="markdown-body entry-content">
             {{ .Body | markDown }}
-            <details><summary>Commits</summary>
-            <ul>
-            {{ range .CommitMessages }}
-            <li><pre>{{ .Commit.Message }}</pre></li>
-            {{ end }}
-            </ul>
-            </details>
           </article>
         </td>
       </tr>
@@ -184,21 +181,7 @@ td {
             {{end}}
           </div>
         </td>
-        <td class="title"><img src="{{ .User.AvatarURL }}" class="avatar"/></td>
-      </tr>
-      <tr class="body">
-        <td colspan="2">
-          <article class="markdown-body entry-content">
-            <details><summary>Details</summary>
-            {{ .Body | markDown }}
-            <ul>
-            {{ range .CommitMessages }}
-            <li><pre>{{ .Commit.Message }}</pre></li>
-            {{ end }}
-            </ul>
-            </details>
-          </article>
-        </td>
+        <td class="title alnright"><img src="{{ .User.AvatarURL }}" class="avatar"/></td>
       </tr>
     </table>
     <div class="spacer">&nbsp</div>
