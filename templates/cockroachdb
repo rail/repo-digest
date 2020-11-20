@@ -105,6 +105,17 @@ td {
     line-height: 16px;
 }
 
+pre {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 600px;
+    display: inline-block;
+}
+
+article p img {
+    width: 600px;
+}
+
 .spacing {
     line-height: 24px;
 }
