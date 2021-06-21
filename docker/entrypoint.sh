@@ -50,4 +50,5 @@ EOF
 sed 's/\.svg/.png/g' ${digest_file} >> /tmp/mail
 
 msmtp -t < /tmp/mail
-
+# report success to Dead Man's Snitch
+curl https://nosnch.in/82ad2a5b56
