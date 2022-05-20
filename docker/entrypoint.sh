@@ -3,7 +3,7 @@
 
 set -exo pipefail
 
-export MAILTO="eng@cockroachlabs.com"
+export MAILTO="repo-digest@cockroachlabs.com"
 REPOS="cockroachdb/cockroach,cockroachdb/cockroach-prod,cockroachdb/docs,cockroachdb/rpc-bench,cockroachdb/examples-go,cockroachlabs/managed-service,cockroachdb/pebble"
 
 run_timestamp=$(date  +"%Y-%m-%d-%H:%M:%S")
